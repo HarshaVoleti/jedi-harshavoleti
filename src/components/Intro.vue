@@ -60,7 +60,7 @@ onMounted(() => {
 
 <style scoped>
 .intro-wrapper {
-  position: relative;
+  position: fixed;
   min-height: 100vh;
   width: 100vw;
   display: flex;

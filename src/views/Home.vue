@@ -2,7 +2,6 @@
 import { ref } from 'vue'
 import Intro from '../components/Intro.vue'
     import BaseInfo from '../components/BaseInfo.vue'
-    import Experience from '../components/Experience.vue'
 
 
 const showHero = ref(false)
