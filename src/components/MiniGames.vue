@@ -145,7 +145,7 @@
           <div class="game-instructions" v-if="!memoryGameRunning">
             <p>Watch the sequence, then repeat it!</p>
             <p>Each level adds one more step!</p>
-            <button @click="startMemoryGame" class="start-btn">Begin Test</button>
+            <button @click="startMemoryGamePlay" class="start-btn">Begin Test</button>
           </div>
           
           <!-- Game over -->
