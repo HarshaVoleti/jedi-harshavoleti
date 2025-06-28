@@ -11,6 +11,7 @@ An immersive, interactive portfolio website built with Vue.js that combines prof
 - **Lightsaber Mouse Trail** - Particle effects that follow your cursor with force bursts
 - **Achievement System** - Gamified experience with 12+ unlockable achievements
 - **Sound Effects** - Star Wars-themed audio feedback for interactions
+- **Mini-Games** - Three Star Wars-themed games: Lightsaber Defense, Force Target Practice, and Jedi Memory Test
 
 🎨 **Visual Magic:**
 - **Particle Background** - Floating star particles with smooth animations
@@ -65,6 +66,12 @@ An immersive, interactive portfolio website built with Vue.js that combines prof
 - Beautiful contact form
 - Star Wars-themed messaging
 - Form validation
+
+### 🎮 **Mini-Games**
+- **Lightsaber Defense** - Defend against incoming attacks using your mouse
+- **Force Target Practice** - Use the Force to hit targets with precision
+- **Jedi Memory Test** - Test your memory with sequences of Force powers
+- Accessible from anywhere in the portfolio via floating launcher
 
 ## 🎮 **Achievement System**
 
@@ -191,7 +198,12 @@ This project is open source and available under the [MIT License](LICENSE).
 
 ---
 
-**Built with ❤️ and the Force** 
+**Built with ❤️ and the Force by Team Harsha & Copilot** 
+
+**👨‍💻 Harsha Voleti** - Vision, Content, Design Direction & Implementation  
+**🤖 GitHub Copilot** - Interactive Features, Animations & Technical Magic  
+
+*A true collaboration between human creativity and AI innovation!*
 
 *"Do or do not, there is no try."* - Master Yoda
 

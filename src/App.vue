@@ -4,6 +4,7 @@
     <SoundManager />
     <AchievementSystem />
     <PWAInstaller />
+    <MiniGames />
     <router-view class="app-wrapper"/>
   </div>
 </template>
@@ -13,6 +14,7 @@ import MouseTrail from './components/MouseTrail.vue'
 import SoundManager from './components/SoundManager.vue'
 import AchievementSystem from './components/AchievementSystem.vue'
 import PWAInstaller from './components/PWAInstaller.vue'
+import MiniGames from './components/MiniGames.vue'
 </script>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@900&display=swap');
