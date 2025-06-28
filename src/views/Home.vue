@@ -8,13 +8,13 @@ const showHero = ref(false)
 const hideIntro = ref(false)
 
 const handleIntroComplete = () => {
-  // Start showing hero early
+  // Start showing hero immediately
   showHero.value = true
 
-  // Later, hide intro
+  // Hide intro immediately when skipped or completed
   setTimeout(() => {
     hideIntro.value = true
-  }, 15000) // match crawl duration
+  }, 500) // Short delay for smooth transition
 }
 </script>
 

@@ -1,35 +1,61 @@
 <script setup>
-import { ref, onMounted, defineEmits } from 'vue'
+import { ref, onMounted, onUnmounted, defineEmits } from 'vue'
 const emit = defineEmits(['intro-complete'])
 
 const showOpeningLine = ref(true)
 const showNameZoom = ref(false)
 const showCrawl = ref(false)
+let timeouts = []
+
+const skipIntro = () => {
+  // Clear all timeouts to stop the intro sequence
+  timeouts.forEach(timeout => clearTimeout(timeout))
+  
+  // Hide all intro elements immediately
+  showOpeningLine.value = false
+  showNameZoom.value = false
+  showCrawl.value = false
+  
+  // Emit completion
+  emit('intro-complete')
+}
 
 onMounted(() => {
-  setTimeout(() => {
+  const timeout1 = setTimeout(() => {
     showOpeningLine.value = false
     showNameZoom.value = true
 
-    setTimeout(() => {
+    const timeout2 = setTimeout(() => {
       showCrawl.value = true
 
-      setTimeout(() => {
+      const timeout3 = setTimeout(() => {
         showNameZoom.value = false
       }, 4000)
 
-      setTimeout(() => {
+      const timeout4 = setTimeout(() => {
         // showCrawl.value = false
         emit('intro-complete') // Let parent know intro is done
       }, 10000)
 
+      timeouts.push(timeout3, timeout4)
     }, 3000) // Slight delay before crawl
+    
+    timeouts.push(timeout2)
   }, 2000) // Initial opening line
+  
+  timeouts.push(timeout1)
+})
+
+onUnmounted(() => {
+  // Clean up timeouts when component is destroyed
+  timeouts.forEach(timeout => clearTimeout(timeout))
 })
 </script>
 
 <template>
   <div class="intro-wrapper">
+    <button class="skip-intro" @click="skipIntro">Skip Intro</button>
+    
     <transition name="fade">
       <div v-if="showOpeningLine" class="opening-line">
         Not so long ago,<br />a galaxy not so far away...
@@ -145,5 +171,29 @@ onMounted(() => {
 }
 .fade-enter-from, .fade-leave-to {
   opacity: 0;
+}
+
+.skip-intro {
+  position: fixed;
+  top: 2rem;
+  right: 2rem;
+  background: rgba(255, 232, 31, 0.1);
+  border: 1px solid #ffe81f;
+  color: #ffe81f;
+  padding: 0.8rem 1.5rem;
+  border-radius: 25px;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.9rem;
+  cursor: pointer;
+  z-index: 100;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.skip-intro:hover {
+  background: #ffe81f;
+  color: #000;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(255, 232, 31, 0.4);
 }
 </style>

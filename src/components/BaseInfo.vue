@@ -3,7 +3,8 @@
     import Projects from './Projects.vue'
     import Achievements from './Achievements.vue'
     import Skills from './Skills.vue'
-    import ContactForm from './ContactForm.vue';
+    import ContactForm from './ContactForm.vue'
+    import Navigation from './Navigation.vue'
     import { useRouter } from 'vue-router'
 
 
@@ -23,7 +24,9 @@ function goToWorkshopPage() {
 
 <template>
   <section class="base-info">
-    <div class="landing-container">
+    <Navigation />
+    
+    <div id="home" class="landing-container">
       <div class="landing-image">
         <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/4ecf6bb3-e5c2-49aa-8300-365ddf7e83fa/df82mav-93f48317-0773-4787-83c7-5aceca804d6d.png/v1/fill/w_1001,h_798/darth_vader_png_by_kevingame_2_df82mav-pre.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MTAyMCIsInBhdGgiOiJcL2ZcLzRlY2Y2YmIzLWU1YzItNDlhYS04MzAwLTM2NWRkZjdlODNmYVwvZGY4Mm1hdi05M2Y0ODMxNy0wNzczLTQ3ODctODNjNy01YWNlY2E4MDRkNmQucG5nIiwid2lkdGgiOiI8PTEyODAifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.kNJRokty4yZSpeoPsWUz-_4oDOoZGQUvY2ShKURmKJ4" alt="Harsha Voleti" />
       </div>
@@ -43,19 +46,19 @@ function goToWorkshopPage() {
         </div>
       </div>
     </div>
-    <div class="skills-wrapper">
+    <div id="skills" class="skills-wrapper">
         <Skills />
     </div>
-    <div class="experience-wrapper">
+    <div id="experience" class="experience-wrapper">
       <Experience />
     </div>
-    <div class="projects-wrapper">
+    <div id="projects" class="projects-wrapper">
         <Projects />
     </div>
-    <div class="achievements-wrapper">
+    <div id="achievements" class="achievements-wrapper">
         <Achievements @show-workshop="goToWorkshopPage" />
     </div>
-    <div class="contact-wrapper">
+    <div id="contact" class="contact-wrapper">
         <ContactForm />
     </div>
   </section>
