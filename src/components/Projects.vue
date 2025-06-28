@@ -161,19 +161,23 @@ onMounted(async () => {
   padding: 1.5rem;
   text-align: left;
   box-shadow: 0 0 12px rgba(255, 232, 31, 0.2);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   opacity: 0;
-  transform: translateY(60px);
+  transform: translateY(60px) rotateX(10deg);
+  perspective: 1000px;
 }
 
 .project-card.visible {
   opacity: 1;
-  transform: translateY(0);
+  transform: translateY(0) rotateX(0deg);
 }
 
 .project-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 0 20px rgba(255, 232, 31, 0.6);
+  transform: translateY(-15px) rotateX(5deg) scale(1.02);
+  box-shadow: 
+    0 20px 40px rgba(255, 232, 31, 0.3),
+    0 0 20px rgba(255, 232, 31, 0.4);
+  border-color: #fff500;
 }
 
 .tech-stack {

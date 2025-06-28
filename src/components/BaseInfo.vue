@@ -5,6 +5,8 @@
     import Skills from './Skills.vue'
     import ContactForm from './ContactForm.vue'
     import Navigation from './Navigation.vue'
+    import ParticleBackground from './ParticleBackground.vue'
+    import TypingEffect from './TypingEffect.vue'
     import { useRouter } from 'vue-router'
 
 
@@ -20,10 +22,22 @@ const router = useRouter()
 function goToWorkshopPage() {
   router.push('/workshop')
 }
+
+const downloadResume = () => {
+  // You can replace this with actual resume file path
+  const resumeUrl = '/harsha-voleti-resume.pdf' // Add your resume to public folder
+  const link = document.createElement('a')
+  link.href = resumeUrl
+  link.download = 'Harsha_Voleti_Resume.pdf'
+  document.body.appendChild(link)
+  link.click()
+  document.body.removeChild(link)
+}
 </script>
 
 <template>
   <section class="base-info">
+    <ParticleBackground />
     <Navigation />
     
     <div id="home" class="landing-container">
@@ -32,7 +46,9 @@ function goToWorkshopPage() {
       </div>
       <div class="landing-info">
         <h1 class="landing-name">Harsha Voleti</h1>
-        <h2 class="landing-role">Software Developer</h2>
+        <div class="landing-role">
+          <TypingEffect />
+        </div>
         <div class="landing-links">
           <a
             v-for="link in socialLinks"
@@ -43,6 +59,9 @@ function goToWorkshopPage() {
           >
             {{ link.label }}
           </a>
+          <button class="resume-btn" @click="downloadResume">
+            📄 Download Resume
+          </button>
         </div>
       </div>
     </div>
@@ -74,6 +93,8 @@ function goToWorkshopPage() {
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: relative;
+  z-index: 1;
 }
 
 .landing-container {
@@ -120,6 +141,7 @@ function goToWorkshopPage() {
   font-size: 1.5rem;
   color: #ccc;
   margin: 0;
+  min-height: 2rem; /* Prevent layout shift during typing */
 }
 
 .landing-links {
@@ -144,9 +166,65 @@ function goToWorkshopPage() {
   color: #000;
 }
 
+.resume-btn {
+  background: linear-gradient(45deg, #ffe81f, #fff500);
+  color: #000;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-weight: bold;
+  font-family: 'Orbitron', sans-serif;
+  cursor: pointer;
+  transition: all 0.3s;
+  box-shadow: 0 4px 15px rgba(255, 232, 31, 0.3);
+}
+
+.resume-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 232, 31, 0.5);
+}
+
 .experience-wrapper {
   width: 100%;
   max-width: 1200px;
   padding: 2rem 1rem;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .landing-container {
+    flex-direction: column;
+    height: auto;
+    padding: 2rem 1rem;
+    gap: 2rem;
+  }
+
+  .landing-image img {
+    width: 280px;
+    height: 280px;
+  }
+
+  .landing-info {
+    text-align: center;
+  }
+
+  .landing-name {
+    font-size: 2rem;
+  }
+
+  .landing-role {
+    font-size: 1.2rem;
+  }
+
+  .landing-links {
+    justify-content: center;
+    gap: 0.5rem;
+  }
+
+  .landing-links a,
+  .resume-btn {
+    font-size: 0.9rem;
+    padding: 0.4rem 0.8rem;
+  }
 }
 </style>
