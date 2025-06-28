@@ -16,6 +16,15 @@
   
   /* Smooth scrolling */
   scroll-behavior: smooth;
+  
+  /* Theme Variables */
+  --bg-color: #000000;
+  --text-color: #ffe81f;
+  --text-secondary: #cccccc;
+  --accent-color: #ffe81f;
+  --border-color: #ffe81f;
+  --card-bg: rgba(255, 255, 255, 0.05);
+  --shadow-color: rgba(255, 232, 31, 0.2);
 }
 
 a {
@@ -42,6 +51,15 @@ body.star-wars-bg {
   background-repeat: repeat;
   background-size: cover;
   color: #ffe81f;
+  margin: 0;
+  padding: 0;
+  font-family: 'Orbitron', sans-serif;
+  overflow-x: hidden;
+}
+
+body.light-bg {
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  color: #333333;
   margin: 0;
   padding: 0;
   font-family: 'Orbitron', sans-serif;

@@ -110,7 +110,7 @@ onMounted(() => {
 <style scoped>
 .timeline-experience {
   padding: 4rem 2rem;
-  color: #ffe81f;
+  color: var(--text-color);
   font-family: 'Orbitron', sans-serif;
   max-width: 1000px;
   margin: 0 auto;
@@ -121,7 +121,7 @@ onMounted(() => {
   font-size: 2.5rem;
   margin-bottom: 3rem;
   color: transparent;
-  -webkit-text-stroke: 1.2px #ffe81f;
+  -webkit-text-stroke: 1.2px var(--accent-color);
 }
 
 .timeline-container {
@@ -135,7 +135,7 @@ onMounted(() => {
   top: 0;
   bottom: 0;
   width: 3px;
-  background: linear-gradient(to bottom, transparent, #ffe81f, transparent);
+  background: linear-gradient(to bottom, transparent, var(--accent-color), transparent);
   transform: translateX(-50%);
   z-index: 1;
 }

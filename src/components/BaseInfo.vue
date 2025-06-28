@@ -1,5 +1,6 @@
 <script setup>
     import Experience from './Experience.vue'
+    import TimelineExperience from './TimelineExperience.vue'
     import Projects from './Projects.vue'
     import Achievements from './Achievements.vue'
     import Skills from './Skills.vue'
@@ -7,6 +8,8 @@
     import Navigation from './Navigation.vue'
     import ParticleBackground from './ParticleBackground.vue'
     import TypingEffect from './TypingEffect.vue'
+    import ScrollAnimations from './ScrollAnimations.vue'
+    import HologramImage from './HologramImage.vue'
     import { useRouter } from 'vue-router'
 
 
@@ -42,7 +45,10 @@ const downloadResume = () => {
     
     <div id="home" class="landing-container">
       <div class="landing-image">
-        <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/4ecf6bb3-e5c2-49aa-8300-365ddf7e83fa/df82mav-93f48317-0773-4787-83c7-5aceca804d6d.png/v1/fill/w_1001,h_798/darth_vader_png_by_kevingame_2_df82mav-pre.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MTAyMCIsInBhdGgiOiJcL2ZcLzRlY2Y2YmIzLWU1YzItNDlhYS04MzAwLTM2NWRkZjdlODNmYVwvZGY4Mm1hdi05M2Y0ODMxNy0wNzczLTQ3ODctODNjNy01YWNlY2E4MDRkNmQucG5nIiwid2lkdGgiOiI8PTEyODAifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.kNJRokty4yZSpeoPsWUz-_4oDOoZGQUvY2ShKURmKJ4" alt="Harsha Voleti" />
+        <HologramImage 
+          src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/4ecf6bb3-e5c2-49aa-8300-365ddf7e83fa/df82mav-93f48317-0773-4787-83c7-5aceca804d6d.png/v1/fill/w_1001,h_798/darth_vader_png_by_kevingame_2_df82mav-pre.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MTAyMCIsInBhdGgiOiJcL2ZcLzRlY2Y2YmIzLWU1YzItNDlhYS04MzAwLTM2NWRkZjdlODNmYVwvZGY4Mm1hdi05M2Y0ODMxNy0wNzczLTQ3ODctODNjNy01YWNlY2E4MDRkNmQucG5nIiwid2lkdGgiOiI8PTEyODAifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.kNJRokty4yZSpeoPsWUz-_4oDOoZGQUvY2ShKURmKJ4" 
+          alt="Harsha Voleti" 
+        />
       </div>
       <div class="landing-info">
         <h1 class="landing-name">Harsha Voleti</h1>
@@ -65,21 +71,37 @@ const downloadResume = () => {
         </div>
       </div>
     </div>
-    <div id="skills" class="skills-wrapper">
+    <ScrollAnimations>
+      <template #skills>
+        <div id="skills" class="skills-wrapper">
         <Skills />
     </div>
-    <div id="experience" class="experience-wrapper">
-      <Experience />
-    </div>
-    <div id="projects" class="projects-wrapper">
-        <Projects />
-    </div>
-    <div id="achievements" class="achievements-wrapper">
-        <Achievements @show-workshop="goToWorkshopPage" />
-    </div>
-    <div id="contact" class="contact-wrapper">
-        <ContactForm />
-    </div>
+      </template>
+      
+      <template #experience>
+        <div id="experience" class="experience-wrapper">
+          <TimelineExperience />
+        </div>
+      </template>
+      
+      <template #projects>
+        <div id="projects" class="projects-wrapper">
+          <Projects />
+        </div>
+      </template>
+      
+      <template #achievements>
+        <div id="achievements" class="achievements-wrapper">
+          <Achievements @show-workshop="goToWorkshopPage" />
+        </div>
+      </template>
+      
+      <template #contact>
+        <div id="contact" class="contact-wrapper">
+          <ContactForm />
+        </div>
+      </template>
+    </ScrollAnimations>
   </section>
 </template>
 
@@ -110,17 +132,10 @@ const downloadResume = () => {
   margin-bottom: 4rem;
 }
 
-.landing-image img {
-  width: 400px;
-  height: 400px;
-  border-radius: 12px;
-  object-fit: cover;
-  box-shadow: 0 0 30px rgba(255, 255, 255, 0.2);
-  transition: transform 0.4s ease;
-}
-
-.landing-image img:hover {
-  transform: scale(1.05);
+.landing-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .landing-info {
@@ -167,21 +182,45 @@ const downloadResume = () => {
 }
 
 .resume-btn {
-  background: linear-gradient(45deg, #ffe81f, #fff500);
-  color: #000;
+  background: linear-gradient(45deg, #ffe81f, #fff200);
+  color: #000 !important;
   border: none;
-  padding: 0.5rem 1rem;
-  border-radius: 8px;
+  padding: 0.75rem 1.5rem;
+  border-radius: 12px;
   font-weight: bold;
   font-family: 'Orbitron', sans-serif;
+  font-size: 0.95rem;
   cursor: pointer;
-  transition: all 0.3s;
-  box-shadow: 0 4px 15px rgba(255, 232, 31, 0.3);
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(255, 232, 31, 0.4);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.resume-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+  z-index: -1;
+}
+
+.resume-btn:hover::before {
+  left: 100%;
 }
 
 .resume-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(255, 232, 31, 0.5);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(255, 232, 31, 0.6);
+  background: linear-gradient(45deg, #fff200, #ffe81f);
+  color: #000 !important;
 }
 
 .experience-wrapper {

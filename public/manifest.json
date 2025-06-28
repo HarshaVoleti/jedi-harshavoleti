@@ -1,0 +1,57 @@
+{
+  "name": "Harsha Voleti - Portfolio",
+  "short_name": "Harsha Portfolio",
+  "description": "Personal portfolio of Harsha Voleti - Software Developer, Co-Founder & CTO",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#ffe81f",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/star-wars.svg",
+      "sizes": "192x192",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/star-wars.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["portfolio", "developer", "technology"],
+  "lang": "en-US",
+  "scope": "/",
+  "screenshots": [
+    {
+      "src": "/screenshot-wide.jpg",
+      "sizes": "1280x720",
+      "type": "image/jpeg",
+      "form_factor": "wide"
+    },
+    {
+      "src": "/screenshot-narrow.jpg",
+      "sizes": "750x1334",
+      "type": "image/jpeg",
+      "form_factor": "narrow"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "View Projects",
+      "short_name": "Projects",
+      "description": "View my latest projects",
+      "url": "/#projects",
+      "icons": [{ "src": "/star-wars.svg", "sizes": "96x96" }]
+    },
+    {
+      "name": "Contact Me",
+      "short_name": "Contact",
+      "description": "Get in touch",
+      "url": "/#contact",
+      "icons": [{ "src": "/star-wars.svg", "sizes": "96x96" }]
+    }
+  ]
+}
