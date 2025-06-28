@@ -8,11 +8,11 @@
 
 
 const socialLinks = [
-  { label: 'GitHub', url: 'https://github.com/' },
-  { label: 'LinkedIn', url: 'https://linkedin.com/' },
-  { label: 'Instagram', url: 'https://instagram.com/' },
-  { label: 'Email', url: 'mailto:harsha@example.com' },
-  { label: 'Portfolio', url: 'https://yourportfolio.com' }
+  { label: 'GitHub', url: 'https://github.com/HarshaVoleti' },
+  { label: 'LinkedIn', url: 'https://www.linkedin.com/in/harshavoleti/' },
+  { label: 'Instagram', url: 'https://www.instagram.com/harsha.voleti/' },
+  { label: 'Email', url: 'mailto:mailharshavoleti@gmail.com' },
+  { label: 'Portfolio', url: 'https://masterharshavoleti.netlify.app/' }
 ]
 const router = useRouter()
 
