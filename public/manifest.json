@@ -19,6 +19,12 @@
       "sizes": "512x512",
       "type": "image/svg+xml",
       "purpose": "any maskable"
+    },
+    {
+      "src": "/preview-image.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
     }
   ],
   "categories": ["portfolio", "developer", "technology"],
@@ -26,15 +32,15 @@
   "scope": "/",
   "screenshots": [
     {
-      "src": "/screenshot-wide.jpg",
+      "src": "/preview-image.png",
       "sizes": "1280x720",
-      "type": "image/jpeg",
+      "type": "image/png",
       "form_factor": "wide"
     },
     {
-      "src": "/screenshot-narrow.jpg",
+      "src": "/preview-image.png",
       "sizes": "750x1334",
-      "type": "image/jpeg",
+      "type": "image/png",
       "form_factor": "narrow"
     }
   ],
